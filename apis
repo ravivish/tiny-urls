@@ -1,0 +1,30 @@
+GET /api/urls:
+
+Response Body :
+[{
+    id:'',
+    url:''
+},{
+     id:'',
+    url:''
+}]
+
+POst api/urls
+Request:
+{
+    url :''
+}
+Response:
+{
+    id:'',
+    url:'',
+}
+status:201
+
+
+GET api/urls/:id
+    Response Body
+    {
+        id:''
+        url:''
+    }
