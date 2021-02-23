@@ -9,14 +9,15 @@ router.get('/', (req, res) => {
     // const data = [];
     // Object.keys(urls).forEach((id) => {
     //     data.push({ id, url: urls[id].url });
-    // }); 
+    // });
     res.status(200).send(urls);
 });
 router.post('/', (req, res) => {
     const shortid = nanoid(10);
-    const { url } = req.body;
-    urls.push({ id: shortid, url: req.body.url });
-    res.status(201).send({ id: shortid, url });
+    const urldata = req.body.url;
+    console.log(req.body);
+    urls.push({ id: shortid, url: urldata });
+    res.status(201).send({ id: shortid, url: urldata });
 });
 
 router.get('/:id', (req, res) => {
