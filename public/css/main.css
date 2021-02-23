@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto slab', sans-serif;
+}
+
+.main-header {
+    background-color: rgba(116, 231, 22, 0.667);
+    margin: 0;
+    min-width: 100vh;
+}
+
+.main-header-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.header-items {
+    margin: 1em 2em;
+}

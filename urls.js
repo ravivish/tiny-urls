@@ -6,18 +6,17 @@ const urls = require('./urlsdata');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const data = [];
-    Object.keys(urls).forEach((id) => {
-        // console.log(urls[id]);
-        data.push({ id, url: urls[id] });
-    });
-    res.status(200).send(data);
+    // const data = [];
+    // Object.keys(urls).forEach((id) => {
+    //     data.push({ id, url: urls[id].url });
+    // }); 
+    res.status(200).send(urls);
 });
 router.post('/', (req, res) => {
-    const id = nanoid(10);
+    const shortid = nanoid(10);
     const { url } = req.body;
-    urls[id] = url;
-    res.status(201).send({ id, url });
+    urls.push({ id: shortid, url: req.body.url });
+    res.status(201).send({ id: shortid, url });
 });
 
 router.get('/:id', (req, res) => {
@@ -28,9 +27,5 @@ router.get('/:id', (req, res) => {
         res.status(404).send({ error: 'No url found' });
     }
 });
-
-// router.get('/', (req, res) => {
-//     res.send('Hi');
-// });
 
 module.exports = router;
