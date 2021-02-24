@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const shortid = nanoid(10);
     const urldata = req.body.url;
-    console.log(req.body);
+    console.log(req.body.url);
     urls.push({ id: shortid, url: urldata });
     res.status(201).send({ id: shortid, url: urldata });
 });
