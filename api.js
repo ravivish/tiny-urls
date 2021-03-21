@@ -6,7 +6,7 @@ const router = express.Router();
 router.use('/urls', urls);
 
 router.get('/', (req, res) => {
-    res.send('Hello');
+    res.send('Hello wrong end point hit api/urls/');
 });
 
 module.exports = router;

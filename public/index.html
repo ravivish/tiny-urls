@@ -10,21 +10,34 @@
 </head>
 <body>
     <header class="main-header">
+        <h3>
+            UrlShortner
+        </h3>
         <nav class="main-header-nav">
             <ul class="main-header-list">
                 <li class="header-items">Home</li>
-                <li class="header-items">Users</li>
+                <li class="header-items">Utilities</li>
             </ul>
         </nav>
     </header>
-    <div id="list">
-        
-    </div>
     <main class="main-wrapper">
         <section class="main-section">
-            <input type="text" name="url" id="url">
-            <button type="submit" id="generate">Shorten</button>
+            <input type="text" name="url" class="url-input" id="url" placeholder="Enter a valid url">
+            <button type="submit" class="shorten-btn" id="generate">Shorten URL</button>
+            <button type="button" class="copy-btn" id="copybtn">Copy ShortURL</button>
         </section>
     </main>    
+    <div id="list">
+        <h2 class="list-text">List of all urls</h2>
+        <table id="urllist">
+            <thead>
+                <th>Long urls</th>
+                <th>Short urls</th>
+            </thead>
+            <tbody id="url-list-body">
+
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

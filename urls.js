@@ -5,25 +5,24 @@ const urls = require('./urlsdata');
 
 const router = express.Router();
 
+// Get list of all urls
 router.get('/', (req, res) => {
-    // const data = [];
-    // Object.keys(urls).forEach((id) => {
-    //     data.push({ id, url: urls[id].url });
-    // });
     res.status(200).send(urls);
 });
+
+// create short urls
 router.post('/', (req, res) => {
     const shortid = nanoid(10);
-    const urldata = req.body.url;
-    console.log(req.body.url);
-    urls.push({ id: shortid, url: urldata });
-    res.status(201).send({ id: shortid, url: urldata });
+    const { url } = req.body;
+    urls.push({ id: shortid, url });
+    res.status(201).send({ id: shortid, url });
 });
 
+// To redirct the url if available
 router.get('/:id', (req, res) => {
-    const hasUrl = urls[req.params.id];
+    const hasUrl = urls.filter((i) => i.id === req.params.id);
     if (hasUrl) {
-        res.redirect(hasUrl);
+        res.redirect(hasUrl[0].url);
     } else {
         res.status(404).send({ error: 'No url found' });
     }
