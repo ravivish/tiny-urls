@@ -78,6 +78,8 @@ body {
 #urllist{   
     margin: 0 auto;
     border: 2px solid rgb(160, 70, 70);
+    min-width: 80%;
+    
 }
 .list-text{
     display: flex;

@@ -15,10 +15,6 @@ app.use('/api', api);
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send('Hello world');
-});
-
 app.get('/:id', (req, res) => {
     const hasUrl = urls.filter((i) => i.id === req.params.id);
     if (hasUrl) {
